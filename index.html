@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dhaaga · AI Handloom &amp; Craft Heritage Preserver</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17142e;--loom:#221e44;--thread:#e8b64a;--madder:#d2493c;--indigo:#5b6bdc;--paper:#f3ead8;--mute:#a9a3c4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 Hind,system-ui,sans-serif;color:var(--paper);background:var(--ink);
+background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 7px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 7px)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.1}
+a:focus-visible,button:focus-visible,input:focus-visible,label:focus-visible{outline:3px solid var(--thread);outline-offset:2px}
+header{max-width:1100px;margin:auto;padding:28px 20px 10px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+h1{font-size:clamp(40px,7vw,78px);font-weight:800;letter-spacing:-.02em}
+h1 span{display:inline-block;background:linear-gradient(90deg,var(--thread) 0 50%,var(--madder) 50%);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:weave 2.4s ease-out both}
+@keyframes weave{from{background-position:100% 0}to{background-position:0 0}}
+.lead{color:var(--mute);max-width:46ch;font-size:18px}
+.sdg{width:100%;border-radius:6px;border:3px solid var(--thread);box-shadow:8px 8px 0 var(--madder)}
+nav{max-width:1100px;margin:18px auto 0;padding:0 20px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px dashed #3b3668}
+nav button{background:none;border:0;color:var(--mute);font:600 16px Hind;padding:12px 18px;cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px}
+nav button[aria-selected=true]{color:var(--thread);border-color:var(--thread)}
+main{max-width:1100px;margin:auto;padding:24px 20px 60px}.p{display:none}.p.on{display:block}
+.card{background:var(--loom);border:1px solid #3b3668;border-radius:10px;padding:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+#drop{border:3px dashed var(--thread);border-radius:10px;min-height:260px;display:grid;place-items:center;text-align:center;padding:16px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+#drop.over{background:#2e2858;transform:scale(1.01)}#drop img{max-width:100%;max-height:300px;border-radius:6px}#drop input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.samples{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.samples button{padding:0;border:3px solid transparent;border-radius:6px;background:none;cursor:pointer;line-height:0}
+.samples button[aria-pressed=true],.samples button:hover{border-color:var(--thread)}.samples img{width:64px;height:64px;border-radius:4px;image-rendering:pixelated}
+.btn{background:var(--thread);color:var(--ink);border:0;border-radius:8px;padding:12px 22px;font:600 17px Hind;cursor:pointer;transition:.15s}
+.btn:hover{background:#ffd070}.btn:disabled{opacity:.4;cursor:not-allowed}.btn.alt{background:none;color:var(--thread);border:2px solid var(--thread)}
+.bar{height:12px;background:#120f26;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--indigo),var(--thread));transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.row{display:grid;grid-template-columns:150px 1fr 48px;gap:10px;align-items:center;font-size:14px;margin:7px 0}
+.pal{display:flex;gap:6px}.pal i{width:42px;height:42px;border-radius:50%;border:2px solid var(--paper)}
+.warn{background:#4a2330;border-left:4px solid var(--madder);padding:10px 14px;border-radius:6px;margin:10px 0}
+dl{margin:12px 0}dt{color:var(--thread);font-weight:600;margin-top:10px}dd{margin:0}
+input[type=text],input[type=search]{width:100%;padding:11px;border-radius:8px;border:1px solid #4b4580;background:#120f26;color:var(--paper);font:16px Hind;margin:5px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}.cards img{width:100%;border-radius:6px;image-rendering:pixelated}
+.tag{display:inline-block;background:#120f26;border:1px solid var(--thread);color:var(--thread);border-radius:20px;padding:1px 12px;font-size:13px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,90px);background:var(--thread);color:var(--ink);padding:12px 22px;border-radius:8px;font-weight:600;transition:.3s}#toast.on{transform:translate(-50%,0)}
+.spin{width:22px;height:22px;border:3px solid #fff4;border-top-color:var(--thread);border-radius:50%;display:inline-block;vertical-align:middle;animation:r 1s linear infinite}@keyframes r{to{rotate:360deg}}
+footer{text-align:center;color:var(--mute);padding:24px;font-size:14px}
+@media(max-width:800px){header,.grid2{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr 44px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><div><h1><span>Dhaaga</span></h1><h2 style="font-size:26px;margin:10px 0">Know the craft. Keep the craft alive.</h2>
+<p class="lead">Upload a photo of a handloom or folk art piece. The AI names the craft, tells its story, and lets you add it to a living heritage archive.</p></div>
+<img class="sdg" src="/static/sdg.png" alt="UN Sustainable Development Goals poster"></header>
+<nav role="tablist"><button role="tab" data-t="id" aria-selected="true">Identify</button><button role="tab" data-t="ex" aria-selected="false">Explore crafts</button><button role="tab" data-t="ar" aria-selected="false">Heritage archive</button><button role="tab" data-t="ab" aria-selected="false">How it works</button></nav>
+<main>
+<section class="p on" id="p-id"><div class="grid2">
+<div class="card"><h3>1. Choose an image</h3><p style="color:var(--mute);margin:6px 0 14px">Upload, drag in, or take a photo. Or tap a sample below.</p>
+<div id="drop"><div id="hint"><b style="font-size:20px">Drop an image here</b><br>or tap to browse</div><input type="file" id="file" accept="image/*"></div>
+<div class="samples" id="samples" aria-label="Sample images"></div>
+<button class="btn" id="go" disabled>Identify this craft</button> <span id="busy"></span></div>
+<div class="card" id="res"><h3>2. Result</h3><p style="color:var(--mute)">Your result appears here.</p></div></div></section>
+<section class="p" id="p-ex"><input type="search" id="q" placeholder="Search by craft, state, or technique" aria-label="Search crafts"><div class="cards" id="cards" style="margin-top:14px"></div></section>
+<section class="p" id="p-ar"><p style="color:var(--mute)">Pieces saved by visitors. On free hosting this list resets when the server restarts.</p><div class="cards" id="arc"></div></section>
+<section class="p" id="p-ab"><div class="card"><h3>How it works</h3>
+<dl><dt>Features</dt><dd>Each image is reduced to 22 numbers: hue histogram, saturation and brightness, gold-shine share, edge strength, direction of strokes and a Fourier measure of pattern repetition.</dd>
+<dt>Model</dt><dd>A Random Forest (scikit-learn) classifies the features into six crafts. KMeans finds the dominant colour palette.</dd>
+<dt>Training data</dt><dd>This demo is trained on generated pattern images, so it recognises the sample images perfectly but real photos are less certain. Add real photos to <code>dataset/&lt;craft&gt;/</code> and rebuild to improve it.</dd>
+<dt>UN goals</dt><dd>SDG 4 (education about heritage), SDG 8 (artisan livelihoods), SDG 11 (protecting cultural heritage), SDG 12 (responsible consumption of authentic crafts).</dd></dl></div></section>
+</main><footer>Dhaaga · built for the UN SDG internship project</footer><div id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let CR={},file=null,last=null,url=null;
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2600)};
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x==b));document.querySelectorAll('.p').forEach(p=>p.classList.toggle('on',p.id=='p-'+b.dataset.t));if(b.dataset.t=='ar')loadArc()});
+function setFile(f){file=f;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(f);$('#drop').innerHTML='<img src="'+url+'" alt="Selected image"><input type="file" id="file" accept="image/*">';bind();$('#go').disabled=false}
+function bind(){$('#file').onchange=e=>e.target.files[0]&&setFile(e.target.files[0])}bind();
+const d=$('#drop');['dragover','dragenter'].forEach(e=>d.addEventListener(e,x=>{x.preventDefault();d.classList.add('over')}));['dragleave','drop'].forEach(e=>d.addEventListener(e,x=>{x.preventDefault();d.classList.remove('over')}));
+d.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(f&&f.type.startsWith('image/'))setFile(f);else toast('Drop an image file')});
+async function init(){CR=await (await fetch('/api/crafts')).json();
+$('#samples').innerHTML=Object.keys(CR).map(k=>`<button aria-pressed="false" data-k="${k}" title="Sample: ${esc(CR[k].name)}"><img src="/sample/${k}/3.png" alt="Sample ${esc(CR[k].name)}"></button>`).join('');
+document.querySelectorAll('#samples button').forEach(b=>b.onclick=async()=>{document.querySelectorAll('#samples button').forEach(x=>x.setAttribute('aria-pressed',x==b));const bl=await (await fetch(`/sample/${b.dataset.k}/3.png`)).blob();setFile(new File([bl],'sample.png',{type:'image/png'}));$('#go').click()});
+drawCards()}
+function drawCards(){const q=$('#q').value.toLowerCase();$('#cards').innerHTML=Object.entries(CR).filter(([k,c])=>JSON.stringify(c).toLowerCase().includes(q)).map(([k,c])=>`<article class="card"><img src="/sample/${k}/5.png" alt="${esc(c.name)} style pattern"><h3 style="margin:12px 0 4px">${esc(c.name)}</h3><span class="tag">${esc(c.state)}</span><p>${esc(c.story)}</p><p style="color:var(--mute);font-size:14px"><b>Technique:</b> ${esc(c.tech)}</p></article>`).join('')||'<p>No crafts match. Try another word.</p>'}
+$('#q').oninput=drawCards;
+$('#go').onclick=async()=>{if(!file)return;$('#go').disabled=true;$('#busy').innerHTML='<span class="spin"></span> Reading the weave...';const fd=new FormData();fd.append('image',file);
+try{const r=await fetch('/api/classify',{method:'POST',body:fd}),j=await r.json();if(!r.ok)throw new Error(j.error||'Something went wrong');last=j;show(j)}catch(e){toast(e.message)}$('#busy').textContent='';$('#go').disabled=false};
+function show(j){const c=CR[j.key],pct=Math.round(j.confidence*100);
+$('#res').innerHTML=`<h3>${esc(c.name)}</h3><p><span class="tag">${esc(c.state)}</span> <span class="tag">${esc(c.region)}</span></p>
+${j.uncertain?'<div class="warn">The AI is unsure about this image. Try a closer, well-lit photo of the fabric or painting.</div>':''}
+<div class="row"><b>Confidence</b><div class="bar"><i data-w="${pct}"></i></div><b>${pct}%</b></div>
+${j.top.slice(1).map(t=>`<div class="row" style="color:var(--mute)"><span>${esc(CR[t.key].name)}</span><div class="bar"><i data-w="${Math.round(t.p*100)}"></i></div><span>${Math.round(t.p*100)}%</span></div>`).join('')}
+<h3 style="font-size:18px;margin-top:16px">What the AI saw</h3>${j.signals.map(s=>`<div class="row"><span>${esc(s.label)}</span><div class="bar"><i data-w="${Math.round(s.v*100)}"></i></div><span></span></div>`).join('')}
+<div class="pal" aria-label="Dominant colours">${j.palette.map(p=>`<i style="background:${p}" title="${p}"></i>`).join('')}</div>
+<dl><dt>Story</dt><dd>${esc(c.story)}</dd><dt>Technique</dt><dd>${esc(c.tech)}</dd><dt>Motifs</dt><dd>${esc(c.motifs)}</dd><dt>Care</dt><dd>${esc(c.care)}</dd><dt>Why it needs protection</dt><dd>${esc(c.risk)}</dd></dl>
+<h3 style="font-size:18px">Add to the heritage archive</h3><input type="text" id="place" placeholder="Where is this piece from? (village, city)" maxlength="80"><input type="text" id="note" placeholder="Artisan or family story (optional)" maxlength="300"><button class="btn" id="save" style="margin-top:8px">Save to archive</button>`;
+requestAnimationFrame(()=>document.querySelectorAll('#res .bar i').forEach(i=>i.style.width=i.dataset.w+'%'));
+$('#save').onclick=save;$('#res').scrollIntoView({behavior:'smooth',block:'nearest'})}
+async function save(){const im=document.querySelector('#drop img'),cv=document.createElement('canvas');cv.width=cv.height=120;cv.getContext('2d').drawImage(im,0,0,120,120);
+const r=await fetch('/api/archive',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key:last.key,conf:last.confidence,place:$('#place').value,note:$('#note').value,thumb:cv.toDataURL('image/jpeg',.7)})});
+r.ok?toast('Saved to the heritage archive'):toast('Could not save. Try again.')}
+async function loadArc(){const a=await (await fetch('/api/archive')).json();$('#arc').innerHTML=a.map(x=>`<article class="card">${x.thumb?`<img src="${esc(x.thumb)}" alt="">`:''}<h3 style="font-size:20px;margin:10px 0 4px">${esc((CR[x.key]||{}).name||x.key)}</h3><span class="tag">${Math.round(x.conf*100)}% match</span><p>${esc(x.place)}</p><p style="color:var(--mute)">${esc(x.note)}</p></article>`).join('')||'<div class="card">Nothing saved yet. Identify a piece and choose Save to archive.</div>'}
+init();
+</script></body></html>
